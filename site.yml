@@ -1,0 +1,6 @@
+---
+
+- hosts: bcache
+  roles:
+    - clean-dirty
+  tags: tag-clean-dirty

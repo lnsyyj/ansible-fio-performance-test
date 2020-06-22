@@ -1,0 +1,27 @@
+---
+# tasks file for clean-dirty
+
+#- name: "set bcache read_ahead_kb 4096"
+#  shell: "for x in /sys/block/bcache*/queue/read_ahead_kb;do echo 4096 > $x;done"
+
+- name: "set bcache writeback_percent 0"
+  shell: "for y in /sys/block/bcache*/bcache/writeback_percent;do echo 0 > $y;done"
+
+- name: "cat bcache writeback_percent"
+  shell: "for y in /sys/block/bcache*/bcache/writeback_percent;do cat $y;done"
+
+#- name: "set bcache cache_mode writeback"
+#  shell: "for z in /sys/block/bcache*/bcache/cache_mode;do echo writeback > $z;done"
+
+- name: "wait dirty_data"
+  shell: "for y in /sys/block/bcache*/bcache/dirty_data;do cat $y;done"
+  register: result
+  until: result.stdout.find("0.0k") != -1
+  delay: 10
+
+- name: "set bcache writeback_percent 40"
+  shell: "for y in /sys/block/bcache*/bcache/writeback_percent;do echo 40 > $y;done"
+
+- name: "cat bcache writeback_percent"
+  shell: "for y in /sys/block/bcache*/bcache/writeback_percent;do cat $y;done"
+
