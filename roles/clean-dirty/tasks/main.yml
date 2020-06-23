@@ -13,11 +13,13 @@
 #- name: "set bcache cache_mode writeback"
 #  shell: "for z in /sys/block/bcache*/bcache/cache_mode;do echo writeback > $z;done"
 
-- name: "wait dirty_data"
-  shell: "for y in /sys/block/bcache*/bcache/dirty_data;do cat $y;done"
-  register: result
-  until: result.stdout.find("0.0k") != -1
-  delay: 10
+#- name: "wait dirty_data"
+#  shell: "for y in /sys/block/bcache*/bcache/dirty_data;do cat $y;done"
+#  register: result
+#  until: result.stdout.find("0.0k") != -1
+#  delay: 10
+- name: "Wait for bcache dirty data"
+  shell: "sleep {{ bcache_clean_dirty_sleep }}"
 
 - name: "set bcache writeback_percent 40"
   shell: "for y in /sys/block/bcache*/bcache/writeback_percent;do echo 40 > $y;done"

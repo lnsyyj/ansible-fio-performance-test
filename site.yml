@@ -4,3 +4,13 @@
   roles:
     - clean-dirty
   tags: tag-clean-dirty
+
+#- hosts: fio-librbd
+#  roles:
+#    - fio-librbd
+#  tags: tag-fio-librbd
+#
+#- hosts: fio-iscsi
+#  roles:
+#    - fio-iscsi
+#  tags: tag-fio-iscsi

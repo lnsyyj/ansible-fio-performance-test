@@ -1,0 +1,5 @@
+
+bcache_clean_dirty_sleep: 300
+
+fio_iscsi_ioengine: aio
+

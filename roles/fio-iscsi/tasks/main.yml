@@ -1,0 +1,7 @@
+---
+# tasks file for fio-iscsi
+
+- name: "clean-dirty"
+  - import_role:
+     name: clean-dirty
+
