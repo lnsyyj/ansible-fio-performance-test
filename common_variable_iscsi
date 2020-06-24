@@ -1,6 +1,0 @@
-
-
-#IOENGINE="sync"
-IOENGINE="libaio"
-
-FILE_NAME="/dev/mapper/mpatha"
