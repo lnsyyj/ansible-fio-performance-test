@@ -6,7 +6,7 @@ set -x
 
 IOENGINE="libaio"
 
-FILE_NAME="/dev/nvme1n1"
+FILE_NAME="/dev/rbd0"
 
 RW=(randwrite randread)
 BS=(4k 8k 16k 256k 512k 1m)

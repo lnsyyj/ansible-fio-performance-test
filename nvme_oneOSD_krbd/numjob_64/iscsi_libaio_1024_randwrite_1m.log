@@ -1,0 +1,4 @@
+iscsi_libaio_1024_randwrite_1m: (g=0): rw=randwrite, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=1024
+...
+fio-3.1
+Starting 64 processes
