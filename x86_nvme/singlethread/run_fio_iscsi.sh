@@ -11,7 +11,7 @@ FILE_NAME="/dev/nvme0n1"
 RW=(randwrite randread)
 BS=(4k 8k 16k 256k 512k 1m)
 
-NUMJOBS=64
+NUMJOBS=1
 DIRECT=1
 SIZE="512g"
 IODEPTH=1024
