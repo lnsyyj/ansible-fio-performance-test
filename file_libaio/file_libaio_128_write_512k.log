@@ -1,0 +1,30 @@
+iscsi_libaio_128_write_512k: (g=0): rw=write, bs=(R) 512KiB-512KiB, (W) 512KiB-512KiB, (T) 512KiB-512KiB, ioengine=libaio, iodepth=128
+...
+fio-3.7
+Starting 4 processes
+
+iscsi_libaio_128_write_512k: (groupid=0, jobs=4): err= 0: pid=22249: Fri Mar 12 02:52:47 2021
+  write: IOPS=399, BW=200MiB/s (209MB/s)(2000MiB/10011msec)
+    slat (usec): min=178, max=4946.3k, avg=6183.19, stdev=150236.42
+    clat (usec): min=2, max=5480.4k, avg=710322.42, stdev=1571389.27
+     lat (usec): min=305, max=5480.8k, avg=716505.88, stdev=1577293.17
+    clat percentiles (msec):
+     |  1.00th=[    7],  5.00th=[   33], 10.00th=[   40], 20.00th=[   41],
+     | 30.00th=[   41], 40.00th=[   47], 50.00th=[   47], 60.00th=[   48],
+     | 70.00th=[   49], 80.00th=[  169], 90.00th=[ 3306], 95.00th=[ 5067],
+     | 99.00th=[ 5470], 99.50th=[ 5470], 99.90th=[ 5470], 99.95th=[ 5470],
+     | 99.99th=[ 5470]
+   bw (  KiB/s): min= 5109, max=844135, per=100.00%, avg=425153.40, stdev=340536.30, samples=5
+   iops        : min=    9, max= 1648, avg=829.80, stdev=665.30, samples=5
+  lat (usec)   : 4=0.08%, 10=0.03%, 500=0.05%, 750=0.03%, 1000=0.05%
+  lat (msec)   : 2=0.15%, 4=0.30%, 10=0.90%, 20=1.53%, 50=73.05%
+  lat (msec)   : 100=3.18%, 250=0.90%, 500=2.02%, 750=0.08%, 1000=3.18%
+  cpu          : usr=0.45%, sys=6.16%, ctx=2249, majf=0, minf=115
+  IO depths    : 1=0.1%, 2=0.2%, 4=0.4%, 8=0.8%, 16=1.6%, 32=3.2%, >=64=93.7%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=99.9%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=0,4000,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=128
+
+Run status group 0 (all jobs):
+  WRITE: bw=200MiB/s (209MB/s), 200MiB/s-200MiB/s (209MB/s-209MB/s), io=2000MiB (2097MB), run=10011-10011msec
